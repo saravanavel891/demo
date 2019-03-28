@@ -1,0 +1,17 @@
+<p>
+  Time Taken to populate data:  {{timeTaken}}
+</p>
+
+<button (click)="loadTable()">Load Table </button>
+<div *ngIf="employeeList && employeeList.length">
+
+  <ag-grid-angular 
+    style="height: 300px;" 
+    class="ag-theme-balham"
+    [rowData]="employeeList" 
+    [columnDefs]="columNames"
+    (gridReady)="onGridReady($event)"
+    >
+</ag-grid-angular>
+
+</div>
